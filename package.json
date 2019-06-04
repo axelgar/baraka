@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "start-dev": "nodemon -e js,json,hbs ./bin/www",
-    "sass-watch": "sass --watch public/stylesheets/style.scss public/stylesheets/style.css"
+    "sass-watch": "sass --watch public/stylesheets/style.scss public/stylesheets/style.css",
+    "seed-image": "node ./bin/seed/image.js",
+    "seed-user": "node ./bin/seed/user.js"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",

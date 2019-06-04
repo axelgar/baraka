@@ -2,8 +2,12 @@
 	"version": 3,
 	"file": "style.css",
 	"sources": [
-		"style.scss"
+		"style.scss",
+		"../scss/_variables.scss",
+		"../scss/_reset.scss",
+		"../scss/_typography.scss",
+		"../scss/_layout.scss"
 	],
 	"names": [],
-	"mappings": "AAAA,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,IAAI,EAAE,kDAAkD,GACzD;;AACD,AAAA,CAAC,CAAC;EACA,KAAK,EAAE,OAAO,GACf"
+	"mappings": "AEAA,qBAAqB;AAErB,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,UAAU,GACvB;;AACD,AAAA,CAAC,EAAE,CAAC,AAAA,OAAO,EAAE,CAAC,AAAA,MAAM,CAAC;EACnB,UAAU,EAAE,OAAO,GACpB;;AAED,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC,GACX;;AAED,AAAA,EAAE,CAAC;EACD,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC,GACV;;AAED,AAAA,EAAE,CAAC;EACD,UAAU,EAAE,IAAI,GACjB;;AAED,AAAA,CAAC,CAAC;EACA,eAAe,EAAE,IAAI,GACtB"
 }

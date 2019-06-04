@@ -1,0 +1,30 @@
+'use strict';
+
+// require('dotenv').config();
+
+const mongoose = require('mongoose');
+const data = require('../../data/user.js');
+
+const User = require('../../models/user.model.js');
+
+const options = {
+  keepAlive: true,
+  useNewUrlParser: true,
+  reconnectTries: Number.MAX_VALUE
+};
+mongoose.connect('mongodb://localhost/baraka', options)
+  .then(() => {
+    console.log('Connected to Mongo!');
+    return User.remove({});
+  })
+  .then((result) => {
+    console.log('Empty db');
+    return User.insertMany(data);
+  })
+  .then((results) => {
+    console.log('You have some users', results.length);
+    mongoose.connection.close();
+  })
+  .catch((error) => {
+    console.log('There is a problem', error);
+  });
