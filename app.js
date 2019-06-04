@@ -1,10 +1,17 @@
+'use strict';
+
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
+const mongoose = require('mongoose');
+const flash = require('connect-flash');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 const indexRouter = require('./routes/index');
+const privateRouter = require('./routes/private');
 
 const app = express();
 
@@ -24,8 +31,34 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use(flash());
 
+mongoose.connect('mongodb://localhost/baraka', {
+  keepAlive: true,
+  useNewUrlParser: true,
+  reconnectTries: Number.MAX_VALUE
+});
+
+app.use(session({
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  }),
+  secret: 'some-string',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000
+  }
+}));
+
+app.use((req, res, next) => {
+  app.locals.currentUser = req.session.currentUser;
+  next();
+});
+
+app.use('/', indexRouter);
+app.use('/private', privateRouter);
 
 // -- 404 and error handler
 
