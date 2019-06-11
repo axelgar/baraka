@@ -3,11 +3,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-<<<<<<< HEAD
 const ObjectId = require('mongoose').Types.ObjectId;
 const saltRounds = 10;
-=======
->>>>>>> c159def2d266368147e24e943891c3acab72d82f
 
 const apiMiddlewares = require('../middlewares/apiMiddlewares');
 const User = require('../models/user.model');

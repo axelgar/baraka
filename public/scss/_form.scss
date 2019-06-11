@@ -3,5 +3,38 @@
 }
 
 .show {
-  display: initial;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: $color-white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 4px $color-shadow;
+  height: 180px;
+
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    &.category-field {
+      justify-self: center;
+    }
+  }
+
+  input {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 40px;
+  }
+
+  select {
+    margin-top: 40px;
+  }
+
+  button {
+    align-self: center;
+    justify-self: center;
+  }
 }

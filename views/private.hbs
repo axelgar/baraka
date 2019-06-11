@@ -1,16 +1,31 @@
-<header id="site-header">
-  <p>Hola {{user}}</p>
+<header id="dashboard-header">
+  <section class="user">
+    <img src="images/logo.svg" alt="baraka logo">
+    <p>Hola {{user}}!</p>
+  </section>
+  <nav id="dashboard-nav">
+    <ul>
+      <li><a href="#mosaicos"><img src="images/mosaico-icon.png" alt="Icono mosaico"> Mosaicos</a></li>
+      <li><a href="#deco"><img src="images/deco-icon.png" alt="Icono decoracion"> Decoración</a></li>
+      <li><a href="#objetos"><img src="images/objetos-icon.png" alt="Icono objetos singulares"> Objetos Singulares</a>
+      </li>
+      <li><a href="#ceramicas"><img src="images/ceramica-icon.png" alt="Icono cerámica"> Cerámica</a></li>
+      <li><a href="#alfombras"><img src="images/alfombra-icon.png" alt="Icono alfombra"> Alfombras</a></li>
+    </ul>
+  </nav>
   <form method="POST" action="/private/logout">
-    <button type="submit" class="log-out">Log Out</button>
+    <button type="submit" class="btn">Log Out</button>
   </form>
 </header>
-<main id="site-main">
-  <section class="mosaico-form">
+
+<main id="dashboard-main">
+  <h1>Baraka Dashboard</h1>
+  <section class="mosaico-form" id="mosaicos">
     {{#if message}}
     <p class="validation">{{message}}</p>
     {{/if}}
     {{#each mosaicos}}
-      <form method="POST" action="/private/update/{{this._id}}" class="hide">
+      <form method="POST" action="/private/update/{{this._id}}" class="show">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">
@@ -19,7 +34,7 @@
           <label for="title">Titular</label>
           <input type="text" name="title" id="title" value="{{this.title}}" placeholder="Titular de la imagen">
         </fieldset>
-        <fieldset>
+        <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
             <option value="mosaicos">Mosaicos</option>
@@ -29,25 +44,23 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="save-btn">Save</button>
+        <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
       <article class="card">
-        <div>
-          <img src="{{this.url}}" alt="{{this.title}}">
-        </div>
-        <p>{{this.title}}</p>
-        <p>{{this.category}}</p>
-        <button class="edit-btn">Edit</button>
-        <form method="POST" action="/private/delete/{{this._id}}">
-          <button type="submit">Delete</button>
-        </form>
+        <img src="{{this.url}}" alt="{{this.title}}">
+        <p class="title-img">{{this.title}}</p>
+        <p class="category-tag">{{this.category}}</p>
+        <section class="action">
+          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <form method="POST" action="/private/delete/{{this._id}}">
+            <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
+          </form>
+        </section>
       </article>
     {{/each}}
   </section>
 
-
-
-  <section class="deco-form">
+  <section class="deco-form" id="deco">
     {{#each deco}}
       <form action="/private/update/{{this._id}}" method="POST" class="hide">
         <fieldset>
@@ -58,7 +71,7 @@
           <label for="title">Titular</label>
           <input type="text" name="title" id="title" value="{{this.title}}">
         </fieldset>
-        <fieldset>
+        <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
             <option value="mosaicos">Mosaicos</option>
@@ -68,22 +81,22 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="save-btn">Save</button>
+        <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
       <article class="card">
-        <div>
-          <img src="{{this.url}}" alt="{{this.title}}">
-        </div>
-        <p>{{this.title}}</p>
-        <p>{{this.category}}</p>
-        <button class="edit-btn">Edit</button>
-        <form method="POST" action="/private/delete/{{this._id}}">
-          <button type="submit">Delete</button>
-        </form>
+        <img src="{{this.url}}" alt="{{this.title}}">
+        <p class="title-img">{{this.title}}</p>
+        <p class="category-tag">{{this.category}}</p>
+        <section class="action">
+          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <form method="POST" action="/private/delete/{{this._id}}">
+            <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
+          </form>
+        </section>
       </article>
     {{/each}}
   </section>
-  <section class="objetos-form">
+  <section class="objetos-form" id="objetos">
     {{#each objetos}}
       <form action="/private/update/{{this._id}}" method="POST" class="hide" id="form-1">
         <fieldset>
@@ -94,7 +107,7 @@
           <label for="title">Titular</label>
           <input type="text" name="title" id="title" value="{{this.title}}">
         </fieldset>
-        <fieldset>
+        <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
             <option value="mosaicos">Mosaicos</option>
@@ -104,22 +117,22 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="save-btn" id="hide-btn">Save</button>
+        <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
       <article class="card">
-        <div>
-          <img src="{{this.url}}" alt="{{this.title}}">
-        </div>
-        <p>{{this.title}}</p>
-        <p>{{this.category}}</p>
-        <button class="edit-btn" id="show-btn">Edit</button>
-        <form method="POST" action="/private/delete/{{this._id}}">
-          <button type="submit">Delete</button>
-        </form>
+        <img src="{{this.url}}" alt="{{this.title}}">
+        <p class="title-img">{{this.title}}</p>
+        <p class="category-tag">{{this.category}}</p>
+        <section class="action">
+          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <form method="POST" action="/private/delete/{{this._id}}">
+            <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
+          </form>
+        </section>
       </article>
     {{/each}}
   </section>
-  <section class="ceramica-form">
+  <section class="ceramica-form" id="ceramicas">
     {{#each ceramicas}}
       <form action="/private/update/{{this._id}}" method="POST" class="hide">
         <fieldset>
@@ -130,7 +143,7 @@
           <label for="title">Titular</label>
           <input type="text" name="title" id="title" value="{{this.title}}">
         </fieldset>
-        <fieldset>
+        <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
             <option value="mosaicos">Mosaicos</option>
@@ -140,22 +153,22 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="save-btn">Save</button>
+        <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
       <article class="card">
-        <div>
-          <img src="{{this.url}}" alt="{{this.title}}">
-        </div>
-        <p>{{this.title}}</p>
-        <p>{{this.category}}</p>
-        <button class="edit-btn">Edit</button>
-        <form method="POST" action="/private/delete/{{this._id}}">
-          <button type="submit">Delete</button>
-        </form>
+        <img src="{{this.url}}" alt="{{this.title}}">
+        <p class="title-img">{{this.title}}</p>
+        <p class="category-tag">{{this.category}}</p>
+        <section class="action">
+          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <form method="POST" action="/private/delete/{{this._id}}">
+            <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
+          </form>
+        </section>
       </article>
     {{/each}}
   </section>
-  <section class="alfombras-form">
+  <section class="alfombras-form" id="alfombras">
     {{#each alfombras}}
       <form action="/private/update/{{this._id}}" method="POST" class="hide">
         <fieldset>
@@ -166,7 +179,7 @@
           <label for="title">Titular</label>
           <input type="text" name="title" id="title" value="{{this.title}}">
         </fieldset>
-        <fieldset>
+        <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
             <option value="mosaicos">Mosaicos</option>
@@ -176,18 +189,18 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="save-btn">Save</button>
+        <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
       <article class="card">
-        <div>
-          <img src="{{this.url}}" alt="{{this.title}}">
-        </div>
-        <p>{{this.title}}</p>
-        <p>{{this.category}}</p>
-        <button class="edit-btn">Edit</button>
-        <form method="POST" action="/private/delete/{{this._id}}">
-          <button type="submit">Delete</button>
-        </form>
+        <img src="{{this.url}}" alt="{{this.title}}">
+        <p class="title-img">{{this.title}}</p>
+        <p class="category-tag">{{this.category}}</p>
+        <section class="action">
+          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <form method="POST" action="/private/delete/{{this._id}}">
+            <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
+          </form>
+        </section>
       </article>
     {{/each}}
   </section>
