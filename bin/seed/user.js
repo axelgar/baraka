@@ -1,6 +1,6 @@
 'use strict';
 
-// require('dotenv').config();
+require('dotenv').config();
 
 const mongoose = require('mongoose');
 const data = require('../../data/user.js');
@@ -12,7 +12,7 @@ const options = {
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
 };
-mongoose.connect('mongodb://localhost/baraka', options)
+mongoose.connect(process.env.MONGODB_URI, options)
   .then(() => {
     console.log('Connected to Mongo!');
     return User.remove({});

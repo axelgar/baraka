@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -33,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(flash());
 
-mongoose.connect('mongodb://localhost/baraka', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE

@@ -3,7 +3,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 const apiMiddlewares = require('../middlewares/apiMiddlewares');
 const User = require('../models/user.model');
