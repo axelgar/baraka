@@ -25,7 +25,7 @@
     <p class="validation">{{message}}</p>
     {{/if}}
     {{#each mosaicos}}
-      <form method="POST" action="/private/update/{{this._id}}" class="show">
+      <form method="POST" action="/private/update/{{this._id}}" class="hide">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">
@@ -46,12 +46,12 @@
         </fieldset>
         <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
-      <article class="card">
+      <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -83,12 +83,12 @@
         </fieldset>
         <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
-      <article class="card">
+      <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -98,7 +98,7 @@
   </section>
   <section class="objetos-form" id="objetos">
     {{#each objetos}}
-      <form action="/private/update/{{this._id}}" method="POST" class="hide" id="form-1">
+      <form action="/private/update/{{this._id}}" method="POST" class="hide">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">
@@ -119,12 +119,12 @@
         </fieldset>
         <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
-      <article class="card">
+      <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -155,12 +155,12 @@
         </fieldset>
         <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
-      <article class="card">
+      <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -191,12 +191,12 @@
         </fieldset>
         <button type="submit" class="btn" id="hide-btn">Save</button>
       </form>
-      <article class="card">
+      <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
