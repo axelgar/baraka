@@ -1,9 +1,17 @@
-<form method="POST" action="/private/login">
-  <label for="username">Username</label>
-  <input id="username" type="text" placeholder="Username" name="username">
-
-  <label for="password">Password</label>
-  <input id="password" type="password" placeholder="Passwords" name="password">
-
-  <button type="submit">Login</button>
-</form>
+<main id="login-main">
+  <section class="login">
+    <img src="/images/logo.svg" alt="logo Baraka">
+    <hr>
+    <form method="POST" action="/private/login">
+      <fieldset>
+        <label for="username">Username</label>
+        <input id="username" type="text" placeholder="Username" name="username">
+      </fieldset>
+      <fieldset>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Passwords" name="password">
+      </fieldset>
+        <button type="submit" class="btn">Login</button>
+    </form>
+  </section>
+</main>
