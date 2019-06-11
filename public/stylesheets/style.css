@@ -19,4 +19,10 @@ li {
 a {
   text-decoration: none; }
 
+.hide {
+  display: none; }
+
+.show {
+  display: initial; }
+
 /*# sourceMappingURL=style.css.map */

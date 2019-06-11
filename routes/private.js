@@ -3,13 +3,100 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const ObjectId = require('mongoose').Types.ObjectId;
 const saltRounds = 10;
 
 const apiMiddlewares = require('../middlewares/apiMiddlewares');
 const User = require('../models/user.model');
+const Image = require('../models/image.model');
 
 router.get('/', apiMiddlewares.isLoggedIn, (req, res, next) => {
-  res.render('private');
+  const formData = req.flash('dashboard-form-data');
+  const formErrors = req.flash('dashboard-form-error');
+  Image.find()
+    .then((results) => {
+      let mosaicos = [];
+      let deco = [];
+      let objetos = [];
+      let ceramicas = [];
+      let alfombras = [];
+      results.forEach(result => {
+        switch (result.category) {
+        case 'mosaicos':
+          mosaicos.push(result);
+          break;
+        case 'objetos-singulares':
+          objetos.push(result);
+          break;
+        case 'cerámica':
+          ceramicas.push(result);
+          break;
+        case 'alfombras':
+          alfombras.push(result);
+          break;
+        case 'decoración':
+          deco.push(result);
+          break;
+        default:
+          break;
+        }
+      });
+      const data = {
+        mosaicos,
+        deco,
+        objetos,
+        ceramicas,
+        alfombras,
+        user: req.session.currentUser.username,
+        message: formErrors[0],
+        fields: formData[0]
+      };
+      res.render('private', data);
+    })
+    .catch(next);
+});
+
+router.post('/update/:id', (req, res, next) => {
+  const id = req.params.id;
+  console.log(req.body);
+  let { title, category } = req.body;
+  let url;
+  Image.findById(id)
+    .then((result) => {
+      console.log(result);
+      url = result.url;
+      if (req.file) {
+        url = req.file.url;
+      }
+      if (!title || !category) {
+        req.flash('dashboard-form-error', 'Mandatory fields!');
+        req.flash('dasboard-form-data', { title, category });
+        console.log('error');
+        return res.redirect(`/private`);
+      }
+
+      const update = { title, category, url };
+      return Image.findByIdAndUpdate(id, update, { new: true })
+        .then((result) => {
+          console.log('ok');
+          res.redirect('/private');
+        });
+    })
+    .catch(next);
+});
+
+router.post('/delete/:id', (req, res, next) => {
+  const id = req.params.id;
+
+  if (!ObjectId.isValid(id)) {
+    return res.redirect('/private');
+  }
+
+  Image.remove({ _id: id })
+    .then(() => {
+      res.redirect('/private');
+    })
+    .catch(next);
 });
 
 router.get('/login', apiMiddlewares.isNotLoggedIn, (req, res, next) => {

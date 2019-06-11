@@ -1,4 +1,194 @@
-<h1>Nice dashboard</h1>
-<form method="POST" action="/private/logout">
-  <button type="submit" class="log-out">Log Out</button>
-</form>
+<header id="site-header">
+  <p>Hola {{user}}</p>
+  <form method="POST" action="/private/logout">
+    <button type="submit" class="log-out">Log Out</button>
+  </form>
+</header>
+<main id="site-main">
+  <section class="mosaico-form">
+    {{#if message}}
+    <p class="validation">{{message}}</p>
+    {{/if}}
+    {{#each mosaicos}}
+      <form method="POST" action="/private/update/{{this._id}}" class="hide">
+        <fieldset>
+          <label for="url">Elige una imagen</label>
+          <input type="file" name="url" id="url">
+        </fieldset>
+        <fieldset>
+          <label for="title">Titular</label>
+          <input type="text" name="title" id="title" value="{{this.title}}" placeholder="Titular de la imagen">
+        </fieldset>
+        <fieldset>
+          <label for="category">Categoria</label>
+          <select name="category" id="category">
+            <option value="mosaicos">Mosaicos</option>
+            <option value="decoración">Decoración</option>
+            <option value="objetos-singulares">Objetos Singulares</option>
+            <option value="cerámica">Cerámica</option>
+            <option value="alfombras">Alfombras</option>
+          </select>
+        </fieldset>
+        <button type="submit" class="save-btn">Save</button>
+      </form>
+      <article class="card">
+        <div>
+          <img src="{{this.url}}" alt="{{this.title}}">
+        </div>
+        <p>{{this.title}}</p>
+        <p>{{this.category}}</p>
+        <button class="edit-btn">Edit</button>
+        <form method="POST" action="/private/delete/{{this._id}}">
+          <button type="submit">Delete</button>
+        </form>
+      </article>
+    {{/each}}
+  </section>
+
+
+
+  <section class="deco-form">
+    {{#each deco}}
+      <form action="/private/update/{{this._id}}" method="POST" class="hide">
+        <fieldset>
+          <label for="url">Elige una imagen</label>
+          <input type="file" name="url" id="url">
+        </fieldset>
+        <fieldset>
+          <label for="title">Titular</label>
+          <input type="text" name="title" id="title" value="{{this.title}}">
+        </fieldset>
+        <fieldset>
+          <label for="category">Categoria</label>
+          <select name="category" id="category">
+            <option value="mosaicos">Mosaicos</option>
+            <option value="decoración">Decoración</option>
+            <option value="objetos-singulares">Objetos Singulares</option>
+            <option value="cerámica">Cerámica</option>
+            <option value="alfombras">Alfombras</option>
+          </select>
+        </fieldset>
+        <button type="submit" class="save-btn">Save</button>
+      </form>
+      <article class="card">
+        <div>
+          <img src="{{this.url}}" alt="{{this.title}}">
+        </div>
+        <p>{{this.title}}</p>
+        <p>{{this.category}}</p>
+        <button class="edit-btn">Edit</button>
+        <form method="POST" action="/private/delete/{{this._id}}">
+          <button type="submit">Delete</button>
+        </form>
+      </article>
+    {{/each}}
+  </section>
+  <section class="objetos-form">
+    {{#each objetos}}
+      <form action="/private/update/{{this._id}}" method="POST" class="hide" id="form-1">
+        <fieldset>
+          <label for="url">Elige una imagen</label>
+          <input type="file" name="url" id="url">
+        </fieldset>
+        <fieldset>
+          <label for="title">Titular</label>
+          <input type="text" name="title" id="title" value="{{this.title}}">
+        </fieldset>
+        <fieldset>
+          <label for="category">Categoria</label>
+          <select name="category" id="category">
+            <option value="mosaicos">Mosaicos</option>
+            <option value="decoración">Decoración</option>
+            <option value="objetos-singulares">Objetos Singulares</option>
+            <option value="cerámica">Cerámica</option>
+            <option value="alfombras">Alfombras</option>
+          </select>
+        </fieldset>
+        <button type="submit" class="save-btn" id="hide-btn">Save</button>
+      </form>
+      <article class="card">
+        <div>
+          <img src="{{this.url}}" alt="{{this.title}}">
+        </div>
+        <p>{{this.title}}</p>
+        <p>{{this.category}}</p>
+        <button class="edit-btn" id="show-btn">Edit</button>
+        <form method="POST" action="/private/delete/{{this._id}}">
+          <button type="submit">Delete</button>
+        </form>
+      </article>
+    {{/each}}
+  </section>
+  <section class="ceramica-form">
+    {{#each ceramicas}}
+      <form action="/private/update/{{this._id}}" method="POST" class="hide">
+        <fieldset>
+          <label for="url">Elige una imagen</label>
+          <input type="file" name="url" id="url">
+        </fieldset>
+        <fieldset>
+          <label for="title">Titular</label>
+          <input type="text" name="title" id="title" value="{{this.title}}">
+        </fieldset>
+        <fieldset>
+          <label for="category">Categoria</label>
+          <select name="category" id="category">
+            <option value="mosaicos">Mosaicos</option>
+            <option value="decoración">Decoración</option>
+            <option value="objetos-singulares">Objetos Singulares</option>
+            <option value="cerámica">Cerámica</option>
+            <option value="alfombras">Alfombras</option>
+          </select>
+        </fieldset>
+        <button type="submit" class="save-btn">Save</button>
+      </form>
+      <article class="card">
+        <div>
+          <img src="{{this.url}}" alt="{{this.title}}">
+        </div>
+        <p>{{this.title}}</p>
+        <p>{{this.category}}</p>
+        <button class="edit-btn">Edit</button>
+        <form method="POST" action="/private/delete/{{this._id}}">
+          <button type="submit">Delete</button>
+        </form>
+      </article>
+    {{/each}}
+  </section>
+  <section class="alfombras-form">
+    {{#each alfombras}}
+      <form action="/private/update/{{this._id}}" method="POST" class="hide">
+        <fieldset>
+          <label for="url">Elige una imagen</label>
+          <input type="file" name="url" id="url">
+        </fieldset>
+        <fieldset>
+          <label for="title">Titular</label>
+          <input type="text" name="title" id="title" value="{{this.title}}">
+        </fieldset>
+        <fieldset>
+          <label for="category">Categoria</label>
+          <select name="category" id="category">
+            <option value="mosaicos">Mosaicos</option>
+            <option value="decoración">Decoración</option>
+            <option value="objetos-singulares">Objetos Singulares</option>
+            <option value="cerámica">Cerámica</option>
+            <option value="alfombras">Alfombras</option>
+          </select>
+        </fieldset>
+        <button type="submit" class="save-btn">Save</button>
+      </form>
+      <article class="card">
+        <div>
+          <img src="{{this.url}}" alt="{{this.title}}">
+        </div>
+        <p>{{this.title}}</p>
+        <p>{{this.category}}</p>
+        <button class="edit-btn">Edit</button>
+        <form method="POST" action="/private/delete/{{this._id}}">
+          <button type="submit">Delete</button>
+        </form>
+      </article>
+    {{/each}}
+  </section>
+</main>

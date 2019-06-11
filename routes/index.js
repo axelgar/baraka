@@ -15,20 +15,24 @@ router.get('/', (req, res, next) => {
       let ceramicas = [];
       let alfombras = [];
       results.forEach(result => {
-        if (result.category === 'mosaicos') {
+        switch (result.category) {
+        case 'mosaicos':
           mosaicos.push(result);
-        }
-        if (result.category === 'objetos-singulares') {
+          break;
+        case 'objetos-singulares':
           objetos.push(result);
-        }
-        if (result.category === 'cerámica') {
+          break;
+        case 'cerámica':
           ceramicas.push(result);
-        }
-        if (result.category === 'alfombras') {
+          break;
+        case 'alfombras':
           alfombras.push(result);
-        }
-        if (result.category === 'decoración') {
+          break;
+        case 'decoración':
           deco.push(result);
+          break;
+        default:
+          break;
         }
       });
       const data = {
@@ -38,7 +42,6 @@ router.get('/', (req, res, next) => {
         ceramicas,
         alfombras
       };
-      console.log(data);
       res.render('index', data);
     })
     .catch(next);
