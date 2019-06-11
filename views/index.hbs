@@ -21,7 +21,9 @@
   <section class="product-overview">
     <article class="mosaicos">
       <div class="carousel">
-        <img src={{images.[1].url}} alt={{images.[1].title}}>
+        {{#each mosaicos}}
+          <img src={{this.url}} alt={{this.title}}>
+        {{/each}}
       </div>
       <h3>Mosaicos a medida</h3>
       <p>Mesas de mosaico con patas de hierro, paneles, fuentes…</p>
@@ -29,7 +31,9 @@
     </article>
     <article class="decoración">
       <div class="carousel">
-        <img src={{images.[1].url}} alt={{images.[1].title}}>
+        {{#each deco}}
+          <img src={{this.url}} alt={{this.title}}>
+        {{/each}}
       </div>
       <h3>Decoración i accessorios</h3>
       <p>Mesitas, taburetes, lámparas, puf, espejos… todo con materiales naturales como la madera, ratán, rafia…</p>
@@ -37,7 +41,9 @@
     </article>
     <article class="objetos-singulares">
       <div class="carousel">
-        <img src={{images.[1].url}} alt={{images.[1].title}}>
+        {{#each objetos}}
+          <img src={{this.url}} alt={{this.title}}>
+        {{/each}}
       </div>
       <h3>Objetos singulares</h3>
       <p>Arte tribal, vintage, brocante…</p>
@@ -45,15 +51,19 @@
     </article>
     <article class="cerámica">
       <div class="carousel">
-        <img src={{images.[1].url}} alt={{images.[1].title}}>
+        {{#each ceramicas}}
+          <img src={{this.url}} alt={{this.title}}>
+        {{/each}}
       </div>
       <h3>Cerámica artesanal</h3>
       <p>Tamgrout, Safi, Fez, Rif…</p>
       <a href="#">Descubre mas</a>
     </article>
-    <article class="mosaicos">
+    <article class="alfombras">
       <div class="carousel">
-        <img src={{images.[1].url}} alt={{images.[1].title}}>
+        {{#each alfombras}}
+          <img src={{this.url}} alt={{this.title}}>
+        {{/each}}
       </div>
       <h3>Alfombras berebere</h3>
       <p>Alfombras, kilims y cojines tribales: Beni Ouarain, Azilal, Boucherouid, Boujaad…</p>
