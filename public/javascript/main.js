@@ -23,3 +23,12 @@ hideBtns.forEach(hideBtn => {
     console.log(form);
   });
 });
+
+const addBtn = document.querySelector('.add-new-btn');
+const newForm = document.querySelector('.add-new');
+
+addBtn.addEventListener('click', () => {
+  newForm.classList.toggle('hide');
+  newForm.classList.toggle('show');
+  addBtn.classList.toggle('rotate');
+});

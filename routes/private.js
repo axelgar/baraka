@@ -99,6 +99,27 @@ router.post('/delete/:id', apiMiddlewares.isLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
+router.post('/create', apiMiddlewares.isLoggedIn, (req, res, next) => {
+  let url;
+  let { title, category } = req.body;
+  if (req.file) {
+    url = req.file.url;
+  }
+  if (!title || !category) {
+    req.flash('yourney-form-error', 'Mandatory fields!');
+    req.flash('yourney-form-data', { title, category });
+    return res.redirect('/private');
+  }
+
+  // normalize data
+  const image = new Image({ title, url, category });
+  image.save()
+    .then(() => {
+      res.redirect(`/private`);
+    })
+    .catch(next);
+});
+
 router.get('/login', apiMiddlewares.isNotLoggedIn, (req, res, next) => {
   const formData = req.flash('login-data');
   const formErrors = req.flash('login-error');

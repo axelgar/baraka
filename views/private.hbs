@@ -20,6 +20,31 @@
 
 <main id="dashboard-main">
   <h1>Baraka Dashboard</h1>
+  <button class="btn add-new-btn rounded-btn">+</button>
+  <section>
+    <form action="/private/create" method="POST" class="add-new hide">
+      <fieldset>
+        <label for="url">Elige una imagen</label>
+        <input type="file" name="url" id="url">
+      </fieldset>
+      <fieldset>
+        <label for="title">Titular</label>
+        <input type="text" name="title" id="title" value="{{this.title}}" placeholder="Titular de la imagen">
+      </fieldset>
+      <fieldset class="category-field">
+        <label for="category">Categoria</label>
+        <select name="category" id="category">
+          <option disabled selected value="">Selecciona categoria</option>
+          <option value="mosaicos">Mosaicos</option>
+          <option value="decoración">Decoración</option>
+          <option value="objetos-singulares">Objetos Singulares</option>
+          <option value="cerámica">Cerámica</option>
+          <option value="alfombras">Alfombras</option>
+        </select>
+      </fieldset>
+      <button type="submit" class="btn">Save</button>
+    </form>
+  </section>
   <section class="mosaico-form" id="mosaicos">
     {{#if message}}
     <p class="validation">{{message}}</p>
