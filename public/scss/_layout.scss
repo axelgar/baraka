@@ -5,7 +5,7 @@ body {
 #site-header {
   background: url('/images/hero-bg.png') no-repeat 0 0;
   background-size: cover;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,14 +37,6 @@ body {
       font-size: 1.1em;
       line-height: 1.2;
     }
-
-    a {
-      display: block;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1em;
-      margin-top: 20px;
-    }
   }
 
   hr {
@@ -57,8 +49,28 @@ body {
 
 #site-main {
   .intro {
-    width: 90%;
+    width: 100%;
     margin: 50px auto;
     text-align: center;
+    padding: 0 25px;
+  }
+}
+
+.primary {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  background-color: $color-white;
+  padding: 25px;
+  a {
+    display: block;
+    font-weight: 300;
+    color: $color-text;
   }
 }

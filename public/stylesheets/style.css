@@ -32,7 +32,7 @@ body {
 #site-header {
   background: url("/images/hero-bg.png") no-repeat 0 0;
   background-size: cover;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -55,12 +55,6 @@ body {
     color: #F3A016;
     font-size: 1.1em;
     line-height: 1.2; }
-  #site-header article a {
-    display: block;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1em;
-    margin-top: 20px; }
   #site-header hr {
     border: none;
     border-bottom: 2px solid #F3A016;
@@ -68,9 +62,55 @@ body {
     margin: 30px auto; }
 
 #site-main .intro {
-  width: 90%;
+  width: 100%;
   margin: 50px auto;
-  text-align: center; }
+  text-align: center;
+  padding: 0 25px; }
+
+.primary {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1em;
+  margin-top: 20px; }
+
+footer {
+  text-align: center;
+  background-color: #FFFFFF;
+  padding: 25px; }
+  footer a {
+    display: block;
+    font-weight: 300;
+    color: #3D1A04; }
+
+.product-overview img {
+  width: 100%; }
+
+.product-overview article {
+  padding-bottom: 20px; }
+  .product-overview article:nth-child(odd) {
+    background-color: #FFFFFF; }
+  .product-overview article > * {
+    margin-left: 20px; }
+  .product-overview article .carousel {
+    padding-top: 20px; }
+  .product-overview article div {
+    margin: 0; }
+  .product-overview article h3 {
+    text-transform: uppercase;
+    color: #F3A016;
+    font-size: 1.8rem;
+    margin-bottom: 10px; }
+  .product-overview article .title-underline {
+    display: block;
+    width: 25%;
+    height: 3px;
+    background-color: #3D1A04; }
+  .product-overview article p {
+    margin-bottom: 5px; }
+  .product-overview article a {
+    font-size: 0.8rem;
+    color: #F07318; }
 
 .hide {
   display: none; }
