@@ -9,6 +9,7 @@
 
   .login {
     background-color: $color-white;
+    box-shadow: 0px 2px 4px $color-shadow;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -52,6 +53,5 @@
     .btn {
       margin-top: 20px;
     }
-
   }
 }

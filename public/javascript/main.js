@@ -1,22 +1,25 @@
 'use strict';
 
 // const card = document.getElementById('card-image');
-const cardsArray = document.querySelectorAll('.card');
+const hideBtns = document.querySelectorAll('.hide-btn');
+const showBtns = document.querySelectorAll('.show-btn');
 
-// ni puta idea de como hacerlo dinamico
-
-cardsArray.forEach((card, index) => {
-  const hideBtn = document.getElementById(`hide-btn-${index}`);
-  const showBtn = document.getElementById(`show-btn-${index}`);
-  const form = document.getElementById(`form-${index}`);
-
-  showBtn.addEventListener('click', () => {
-    form.classList.replace('hide', 'show');
+showBtns.forEach(showBtn => {
+  showBtn.addEventListener('click', e => {
+    const card = e.target.parentElement.parentElement.parentElement;
     card.classList.replace('card', 'hide');
+    const form = card.previousElementSibling;
+    form.classList.replace('hide', 'show');
+    console.log(form);
   });
+});
 
-  hideBtn.addEventListener('click', () => {
-    form.classList.replace('show', 'hide');
+hideBtns.forEach(hideBtn => {
+  hideBtn.addEventListener('click', e => {
+    const card = e.target.parentElement.parentElement.parentElement;
     card.classList.replace('hide', 'card');
+    const form = card.previousElementSibling;
+    form.classList.replace('show', 'hide');
+    console.log(form);
   });
 });

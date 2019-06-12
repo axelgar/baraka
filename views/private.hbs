@@ -37,6 +37,7 @@
         <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
+            <option disabled selected value="">Selecciona categoria</option>
             <option value="mosaicos">Mosaicos</option>
             <option value="decoración">Decoración</option>
             <option value="objetos-singulares">Objetos Singulares</option>
@@ -44,14 +45,14 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="btn" id="hide-btn">Save</button>
+        <button type="submit" class="btn hide-btn">Save</button>
       </form>
       <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -62,7 +63,7 @@
 
   <section class="deco-form" id="deco">
     {{#each deco}}
-      <form action="/private/update/{{this._id}}" method="POST" class="hide">
+      <form action="/private/update/{{this._id}}" method="POST" class="hide" id="form-dashboard">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">
@@ -74,6 +75,7 @@
         <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
+            <option disabled selected value="">Selecciona categoria</option>
             <option value="mosaicos">Mosaicos</option>
             <option value="decoración">Decoración</option>
             <option value="objetos-singulares">Objetos Singulares</option>
@@ -81,14 +83,14 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="btn" id="hide-btn">Save</button>
+        <button type="submit" class="btn hide-btn">Save</button>
       </form>
       <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -98,7 +100,7 @@
   </section>
   <section class="objetos-form" id="objetos">
     {{#each objetos}}
-      <form action="/private/update/{{this._id}}" method="POST" class="hide">
+      <form action="/private/update/{{this._id}}" method="POST" class="hide" id="form-dashboard">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">
@@ -110,6 +112,7 @@
         <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
+            <option disabled selected value="">Selecciona categoria</option>
             <option value="mosaicos">Mosaicos</option>
             <option value="decoración">Decoración</option>
             <option value="objetos-singulares">Objetos Singulares</option>
@@ -117,14 +120,14 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="btn" id="hide-btn">Save</button>
+        <button type="submit" class="btn hide-btn">Save</button>
       </form>
       <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -134,7 +137,7 @@
   </section>
   <section class="ceramica-form" id="ceramicas">
     {{#each ceramicas}}
-      <form action="/private/update/{{this._id}}" method="POST" class="hide">
+      <form action="/private/update/{{this._id}}" method="POST" class="hide" id="form-dashboard">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">
@@ -146,6 +149,7 @@
         <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
+            <option disabled selected value="">Selecciona categoria</option>
             <option value="mosaicos">Mosaicos</option>
             <option value="decoración">Decoración</option>
             <option value="objetos-singulares">Objetos Singulares</option>
@@ -153,14 +157,14 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="btn" id="hide-btn">Save</button>
+        <button type="submit" class="btn hide-btn">Save</button>
       </form>
       <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
@@ -170,7 +174,7 @@
   </section>
   <section class="alfombras-form" id="alfombras">
     {{#each alfombras}}
-      <form action="/private/update/{{this._id}}" method="POST" class="hide">
+      <form action="/private/update/{{this._id}}" method="POST" class="hide" id="form-dashboard">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">
@@ -182,6 +186,7 @@
         <fieldset class="category-field">
           <label for="category">Categoria</label>
           <select name="category" id="category">
+            <option disabled selected value="">Selecciona categoria</option>
             <option value="mosaicos">Mosaicos</option>
             <option value="decoración">Decoración</option>
             <option value="objetos-singulares">Objetos Singulares</option>
@@ -189,14 +194,14 @@
             <option value="alfombras">Alfombras</option>
           </select>
         </fieldset>
-        <button type="submit" class="btn" id="hide-btn">Save</button>
+        <button type="submit" class="btn hide-btn">Save</button>
       </form>
       <article class="card" id="card-image">
         <img src="{{this.url}}" alt="{{this.title}}">
         <p class="title-img">{{this.title}}</p>
         <p class="category-tag">{{this.category}}</p>
         <section class="action">
-          <button class="edit-btn" id="show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
+          <button class="edit-btn show-btn"><img src="images/pencil-edit-button.png" alt="edit icon"></button>
           <form method="POST" action="/private/delete/{{this._id}}">
             <button type="submit"><img src="images/waste-bin.png" alt="delete icon"></button>
           </form>
