@@ -56,7 +56,7 @@ router.get('/', apiMiddlewares.isLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
-router.post('/update/:id', (req, res, next) => {
+router.post('/update/:id', apiMiddlewares.isLoggedIn, (req, res, next) => {
   const id = req.params.id;
   console.log(req.body);
   let { title, category } = req.body;
@@ -68,9 +68,9 @@ router.post('/update/:id', (req, res, next) => {
       if (req.file) {
         url = req.file.url;
       }
-      if (!title || !category) {
+      if (!title) {
         req.flash('dashboard-form-error', 'Mandatory fields!');
-        req.flash('dasboard-form-data', { title, category });
+        req.flash('dasboard-form-data', { title });
         console.log('error');
         return res.redirect(`/private`);
       }
@@ -85,7 +85,7 @@ router.post('/update/:id', (req, res, next) => {
     .catch(next);
 });
 
-router.post('/delete/:id', (req, res, next) => {
+router.post('/delete/:id', apiMiddlewares.isLoggedIn, (req, res, next) => {
   const id = req.params.id;
 
   if (!ObjectId.isValid(id)) {
