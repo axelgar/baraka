@@ -4,11 +4,11 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const ObjectId = require('mongoose').Types.ObjectId;
-const saltRounds = 10;
 
 const apiMiddlewares = require('../middlewares/apiMiddlewares');
 const User = require('../models/user.model');
 const Image = require('../models/image.model');
+const parser = require('../config/cloudinary');
 
 router.get('/', apiMiddlewares.isLoggedIn, (req, res, next) => {
   const formData = req.flash('dashboard-form-data');
@@ -56,17 +56,15 @@ router.get('/', apiMiddlewares.isLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
-router.post('/update/:id', (req, res, next) => {
+router.post('/update/:id', parser.single('image'), (req, res, next) => {
   const id = req.params.id;
-  console.log(req.body);
   let { title, category } = req.body;
   let url;
   Image.findById(id)
     .then((result) => {
-      console.log(result);
       url = result.url;
       if (req.file) {
-        url = req.file.url;
+        url = req.file.secure_url;
       }
       if (!title || !category) {
         req.flash('dashboard-form-error', 'Mandatory fields!');
