@@ -98,11 +98,11 @@ router.post('/delete/:id', apiMiddlewares.isLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
-router.post('/create', apiMiddlewares.isLoggedIn, (req, res, next) => {
+router.post('/create', apiMiddlewares.isLoggedIn, parser.single('url'), (req, res, next) => {
   let url;
   let { title, category } = req.body;
   if (req.file) {
-    url = req.file.url;
+    url = req.file.secure_url;
   }
   if (!title || !category) {
     req.flash('yourney-form-error', 'Mandatory fields!');
