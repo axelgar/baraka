@@ -105,8 +105,8 @@ router.post('/create', apiMiddlewares.isLoggedIn, parser.single('url'), (req, re
     url = req.file.secure_url;
   }
   if (!title || !category) {
-    req.flash('yourney-form-error', 'Mandatory fields!');
-    req.flash('yourney-form-data', { title, category });
+    req.flash('dashboard-form-error', 'El form no se ha enviado porque se tienen que rellenar todos los campos!');
+    req.flash('dashboard-form-data', { title, category });
     return res.redirect('/private');
   }
 
