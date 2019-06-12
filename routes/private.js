@@ -56,7 +56,7 @@ router.get('/', apiMiddlewares.isLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
-router.post('/update/:id', apiMiddlewares.isLoggedIn, parser.single('image'), (req, res, next) => {
+router.post('/update/:id', apiMiddlewares.isLoggedIn, parser.single('url'), (req, res, next) => {
   const id = req.params.id;
   let { title, category } = req.body;
   let url;
@@ -66,17 +66,18 @@ router.post('/update/:id', apiMiddlewares.isLoggedIn, parser.single('image'), (r
       if (req.file) {
         url = req.file.secure_url;
       }
+      if (!category) {
+        category = result.category;
+      }
       if (!title) {
         req.flash('dashboard-form-error', 'Mandatory fields!');
         req.flash('dasboard-form-data', { title });
-        console.log('error');
         return res.redirect(`/private`);
       }
 
       const update = { title, category, url };
       return Image.findByIdAndUpdate(id, update, { new: true })
-        .then((result) => {
-          console.log('ok');
+        .then(() => {
           res.redirect('/private');
         });
     })

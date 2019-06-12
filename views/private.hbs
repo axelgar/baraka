@@ -25,7 +25,7 @@
     <p class="validation">{{message}}</p>
     {{/if}}
     {{#each mosaicos}}
-      <form method="POST" action="/private/update/{{this._id}}" class="hide">
+      <form method="POST" action="/private/update/{{this._id}}" class="hide" enctype="multipart/form-data">
         <fieldset>
           <label for="url">Elige una imagen</label>
           <input type="file" name="url" id="url">

@@ -1,7 +1,5 @@
 'use strict';
 
-const ObjectId = require('mongoose').Types.ObjectId;
-
 const apiMiddlewares = {};
 
 apiMiddlewares.isLoggedIn = (req, res, next) => {
