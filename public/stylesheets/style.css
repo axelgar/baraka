@@ -83,6 +83,17 @@ footer {
     font-weight: 300;
     color: #3D1A04; }
 
+.validation {
+  background-color: #F07318;
+  color: #FFFFFF;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  margin: 0;
+  text-align: center; }
+
 .product-overview img {
   width: 100%; }
 
@@ -111,17 +122,6 @@ footer {
   .product-overview article a {
     font-size: 0.8rem;
     color: #F07318; }
-
-.validation {
-  background-color: #F07318;
-  color: #FFFFFF;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  margin: 0;
-  text-align: center; }
 
 .hide {
   display: none; }
