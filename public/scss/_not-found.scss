@@ -11,7 +11,7 @@
   }
 
   h1 {
-    font-size: 25rem;
+    font-size: 10rem;
     line-height: 1;
     margin: 0;
   }
@@ -29,3 +29,12 @@
   height: 100vh;
 }
 
+@media (min-width: 600px) {
+  #error-main {
+    h1 {
+      font-size: 25rem;
+      line-height: 1;
+      margin: 0;
+    }
+  }
+}

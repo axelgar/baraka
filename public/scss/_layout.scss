@@ -17,6 +17,9 @@ body {
     width: 90%;
     margin: auto;
     font-size: 0.875em;
+    div {
+      text-align: center;
+    }
   }
 
   article {
@@ -44,6 +47,38 @@ body {
     border-bottom: 2px solid $color-orange;
     width: 90%;    
     margin: 30px auto;
+  }
+  @media (min-width: 600px) {
+    section {
+      width: 80%;
+      padding: 40px;
+
+      div {
+        margin-bottom: 10px;
+      }
+
+      article {
+        text-align: left;
+        &.description {
+          padding-left: 40px;
+          border-left: 2px solid $color-orange;
+  
+          p {
+            font-size: 1.1rem;
+          }
+        }
+        h1 {
+          margin: 0 60px 20px 0;
+          font-size: 2.8rem;
+        }
+        h2:nth-child(3) {
+          margin-bottom: 0;
+        }
+      }
+      hr {
+       display: none;
+      }
+    }
   }
 }
 
