@@ -25,11 +25,21 @@
   </section>
   <section class="product-overview">
     <article class="mosaicos">
-      <div class="carousel">
-        {{#each mosaicos}}
-          <img src={{this.url}} alt={{this.title}}>
-        {{/each}}
-      </div>
+      <section class="slider">
+        <div class="arrows-container">
+          <button class="btn rounded-btn arrow-left"><</button>
+          <button class="btn rounded-btn arrow-right">></button>
+        </div>
+        <div class="carousel">
+          <div class="container-carousel">
+            {{#each mosaicos}}
+              <div class="img-container">
+                <img src={{this.url}} alt={{this.title}}>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
       <section class="product-info">
         <h3>Mosaicos a medida</h3>
         <span class="title-underline"></span>
@@ -38,11 +48,21 @@
       </section>
     </article>
     <article class="decoración">
-      <div class="carousel">
-        {{#each deco}}
-          <img src={{this.url}} alt={{this.title}}>
-        {{/each}}
-      </div>
+      <section class="slider">
+        <div class="arrows-container">
+          <button class="btn rounded-btn arrow-left"><</button>
+          <button class="btn rounded-btn arrow-right">></button>
+        </div>
+        <div class="carousel">
+          <div class="container-carousel">
+            {{#each deco}}
+            <div class="img-container">
+              <img src={{this.url}} alt={{this.title}}>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
       <section class="product-info">
         <h3>Decoración i accessorios</h3>
         <span class="title-underline"></span>
@@ -51,11 +71,21 @@
       </section>
     </article>
     <article class="objetos-singulares">
-      <div class="carousel">
-        {{#each objetos}}
-          <img src={{this.url}} alt={{this.title}}>
-        {{/each}}
-      </div>
+       <section class="slider">
+        <div class="arrows-container">
+          <button class="btn rounded-btn arrow-left"><</button>
+          <button class="btn rounded-btn arrow-right">></button>
+        </div>
+        <div class="carousel">
+          <div class="container-carousel">
+            {{#each objetos}}
+            <div class="img-container">
+              <img src={{this.url}} alt={{this.title}}>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
       <section class="product-info">
         <h3>Objetos singulares</h3>
         <span class="title-underline"></span>
@@ -64,11 +94,21 @@
       </section>
     </article>
     <article class="cerámica">
-      <div class="carousel">
-        {{#each ceramicas}}
-          <img src={{this.url}} alt={{this.title}}>
-        {{/each}}
-      </div>
+       <section class="slider">
+        <div class="arrows-container">
+          <button class="btn rounded-btn arrow-left"><</button>
+          <button class="btn rounded-btn arrow-right">></button>
+        </div>
+        <div class="carousel">
+          <div class="container-carousel">
+            {{#each ceramicas}}
+            <div class="img-container">
+              <img src={{this.url}} alt={{this.title}}>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
       <section class="product-info">
         <h3>Cerámica artesanal</h3>
         <span class="title-underline"></span>
@@ -77,11 +117,21 @@
       </section>
     </article>
     <article class="alfombras">
-      <div class="carousel">
-        {{#each alfombras}}
-          <img src={{this.url}} alt={{this.title}}>
-        {{/each}}
-      </div>
+       <section class="slider">
+        <div class="arrows-container">
+          <button class="btn rounded-btn arrow-left"><</button>
+          <button class="btn rounded-btn arrow-right">></button>
+        </div>
+        <div class="carousel">
+          <div class="container-carousel">
+            {{#each alfombras}}
+            <div class="img-container">
+              <img src={{this.url}} alt={{this.title}}>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
       <section class="product-info">
         <h3>Alfombras berebere</h3>
         <span class="title-underline"></span>

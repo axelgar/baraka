@@ -1,0 +1,56 @@
+.slider {
+
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth ;
+  }
+  .container-carousel {
+    display: grid;
+    width: 300%;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  
+  .arrows-container {
+    position: absolute;
+    z-index: 13;
+    height: 100%;
+    width: 100%;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0.7;
+  }
+  
+  .arrow-left {
+    left: 10px;
+    padding-right: 15px;
+  }
+  
+  .arrow-right {
+    right: 10px;
+    padding-left: 12px;
+  }
+  
+  .img-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+}
+
