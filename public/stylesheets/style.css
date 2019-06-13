@@ -98,77 +98,79 @@ body {
         display: inline-block;
         margin-top: 30px; } }
 
-#site-main .product-overview article {
-  padding: 20px 0; }
-  #site-main .product-overview article:nth-child(odd) {
-    background-color: #FFFFFF; }
-  #site-main .product-overview article > * {
-    margin: 0 20px; }
-  #site-main .product-overview article div {
-    margin: 0; }
-  #site-main .product-overview article .carousel {
-    height: 460px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    box-shadow: 0 2px 4px #00000068; }
-    #site-main .product-overview article .carousel:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #F3A016;
-      opacity: .2; }
-    #site-main .product-overview article .carousel img {
-      min-height: 100%; }
+#site-main .product-overview {
+  overflow: hidden; }
+  #site-main .product-overview article {
+    padding: 20px 0; }
+    #site-main .product-overview article:nth-child(odd) {
+      background-color: #FFFFFF; }
+    #site-main .product-overview article > * {
+      margin: 0 20px; }
+    #site-main .product-overview article div {
+      margin: 0; }
+    #site-main .product-overview article .carousel {
+      height: 460px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 4px #00000068; }
+      #site-main .product-overview article .carousel:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #F3A016;
+        opacity: .2; }
+      #site-main .product-overview article .carousel img {
+        min-height: 100%; }
+        @media (min-width: 600px) {
+          #site-main .product-overview article .carousel img {
+            width: 100%; } }
       @media (min-width: 600px) {
-        #site-main .product-overview article .carousel img {
-          width: 100%; } }
+        #site-main .product-overview article .carousel {
+          width: 100%;
+          height: 600px;
+          overflow: hidden;
+          display: block; } }
     @media (min-width: 600px) {
-      #site-main .product-overview article .carousel {
-        width: 100%;
-        height: 600px;
-        overflow: hidden;
-        display: block; } }
-  @media (min-width: 600px) {
-    #site-main .product-overview article .product-info {
-      align-self: end;
-      padding-bottom: 40px;
-      padding-right: 30%;
-      padding: 0 40% 80px 40px; } }
-  #site-main .product-overview article h3 {
-    text-transform: uppercase;
-    color: #F3A016;
-    font-size: 1.8rem;
-    margin-bottom: 10px; }
-  #site-main .product-overview article .title-underline {
-    display: block;
-    width: 25%;
-    height: 3px;
-    background-color: #3D1A04; }
-  #site-main .product-overview article p {
-    margin-bottom: 5px; }
-  #site-main .product-overview article a {
-    font-size: 0.8rem;
-    color: #F07318;
-    font-weight: 600; }
-  @media (min-width: 600px) {
-    #site-main .product-overview article {
-      display: grid;
-      grid-template-columns: 58% 1fr; }
-      #site-main .product-overview article:nth-child(even) {
-        grid-template-columns: 1fr 58%; }
-        #site-main .product-overview article:nth-child(even) .product-info {
-          grid-column: 1 / 2;
-          grid-row: 1 / 2;
-          padding: 0px 20% 80px 20%; }
-        #site-main .product-overview article:nth-child(even) .carousel {
-          grid-column: 2 / 3;
-          grid-row: 1 / 2; } }
+      #site-main .product-overview article .product-info {
+        align-self: end;
+        padding-bottom: 40px;
+        padding-right: 30%;
+        padding: 0 40% 80px 40px; } }
+    #site-main .product-overview article h3 {
+      text-transform: uppercase;
+      color: #F3A016;
+      font-size: 1.8rem;
+      margin-bottom: 10px; }
+    #site-main .product-overview article .title-underline {
+      display: block;
+      width: 25%;
+      height: 3px;
+      background-color: #3D1A04; }
+    #site-main .product-overview article p {
+      margin-bottom: 5px; }
+    #site-main .product-overview article a {
+      font-size: 0.8rem;
+      color: #F07318;
+      font-weight: 600; }
+    @media (min-width: 600px) {
+      #site-main .product-overview article {
+        display: grid;
+        grid-template-columns: 58% 1fr; }
+        #site-main .product-overview article:nth-child(even) {
+          grid-template-columns: 1fr 58%; }
+          #site-main .product-overview article:nth-child(even) .product-info {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            padding: 0px 20% 80px 20%; }
+          #site-main .product-overview article:nth-child(even) .carousel {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2; } }
 
 .primary {
   display: block;
