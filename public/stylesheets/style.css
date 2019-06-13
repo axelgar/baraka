@@ -211,6 +211,11 @@ footer {
 .hide {
   display: none; }
 
+.add-new.hide {
+  transition: opacity 2s linear;
+  transform: translate(9999px);
+  opacity: 0; }
+
 .show {
   padding: 30px;
   display: grid;
@@ -236,6 +241,17 @@ footer {
   .show button {
     align-self: center;
     justify-self: center; }
+
+@media (max-width: 700px) {
+  .show {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    height: auto; } }
+
+.add-new.show {
+  transition: opacity 2s linear;
+  transform: translate(0);
+  opacity: 1; }
 
 #dashboard-header {
   height: 100vh;
@@ -347,12 +363,17 @@ footer {
       justify-content: space-around;
       align-items: center; }
       #dashboard-main .card .action button {
-        background-color: none;
+        background-color: transparent;
         border: none;
         width: 40px;
         cursor: pointer; }
         #dashboard-main .card .action button img {
           width: 100%; }
+  @media (max-width: 700px) {
+    #dashboard-main .card {
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: 1fr;
+      height: auto; } }
 
 #login-main {
   background: url("/images/hero-bg.png") no-repeat 0 0;

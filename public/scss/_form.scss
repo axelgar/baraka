@@ -1,10 +1,18 @@
 .hide {
-  display: none;
+  display: none; 
+}
+
+
+.add-new.hide {
+  transition: opacity 2s linear;  
+  transform: translate(9999px);
+  opacity: 0;
 }
 
 .show {
   padding: 30px;
   display: grid;
+  
   grid-template-columns: repeat(4, 1fr);
   background-color: $color-white;
   border-radius: 10px;
@@ -38,3 +46,18 @@
     justify-self: center;
   }
 }
+
+@media (max-width: 700px) {
+  .show {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+.add-new.show {
+  transition: opacity 2s linear;  
+  transform:translate(0);
+  opacity: 1;
+}
+
