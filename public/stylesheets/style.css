@@ -314,4 +314,26 @@ footer {
     #login-main .login .btn {
       margin-top: 20px; }
 
+#error-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+  #error-main .masked-copy {
+    -webkit-background-clip: text;
+    color: transparent !important; }
+    #error-main .masked-copy.texture-orange {
+      color: #F07318;
+      background-image: url("/images/hero-bg.png");
+      background-repeat: no-repeat; }
+  #error-main h1 {
+    font-size: 25rem;
+    line-height: 1;
+    margin: 0; }
+  #error-main h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 0.3px; }
+
 /*# sourceMappingURL=style.css.map */
