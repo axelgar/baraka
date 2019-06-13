@@ -208,35 +208,6 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr; } }
 
-.product-overview article {
-  padding: 20px 0; }
-  .product-overview article:nth-child(odd) {
-    background-color: #FFFFFF; }
-  .product-overview article > * {
-    margin-left: 20px; }
-  .product-overview article div {
-    margin: 0; }
-  @media (min-width: 600px) {
-    .product-overview article .carousel {
-      width: 55%;
-      height: 460px;
-      overflow: hidden; } }
-  .product-overview article h3 {
-    text-transform: uppercase;
-    color: #F3A016;
-    font-size: 1.8rem;
-    margin-bottom: 10px; }
-  .product-overview article .title-underline {
-    display: block;
-    width: 25%;
-    height: 3px;
-    background-color: #3D1A04; }
-  .product-overview article p {
-    margin-bottom: 5px; }
-  .product-overview article a {
-    font-size: 0.8rem;
-    color: #F07318; }
-
 .hide {
   display: none; }
 
@@ -396,17 +367,14 @@ footer {
     box-shadow: 0px 2px 4px #00000068;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 90%;
+    flex-direction: column;
     height: 500px;
     border-radius: 20px; }
     #login-main .login hr {
-      border: none;
-      border-left: 2px solid #F3A016;
-      height: 300px;
-      width: 2px;
-      margin: 20%; }
+      display: none; }
     #login-main .login form {
       display: flex;
       flex-direction: column;
@@ -427,6 +395,17 @@ footer {
         margin-top: 15px; }
     #login-main .login .btn {
       margin-top: 20px; }
+  @media (min-width: 600px) {
+    #login-main .login {
+      width: 50%;
+      flex-direction: row;
+      justify-content: center; }
+    #login-main hr {
+      border: none;
+      border-left: 2px solid #F3A016;
+      height: 300px;
+      width: 2px;
+      margin: 20%; } }
 
 #error-main {
   display: flex;
