@@ -475,8 +475,8 @@ footer {
 
 .slider .container-carousel {
   display: grid;
-  width: 300%;
-  grid-template-columns: 1fr 1fr 1fr;
+  width: 600%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   height: 100%;
   position: absolute;
   top: 0;
