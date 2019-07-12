@@ -1,23 +1,27 @@
 'use strict';
 
 function main () {
-  const arrowLeft = document.querySelector('.arrow-left');
-  const arrowRight = document.querySelector('.arrow-right');
-  const carousel = document.querySelector('.carousel');
+  const arrowLeft = document.querySelectorAll('.arrow-left');
+  const arrowRight = document.querySelectorAll('.arrow-right');
+  const carousel = document.querySelectorAll('.carousel');
 
-  arrowLeft.onclick = () => {
-    if (carousel.scrollLeft === 0) {
-      carousel.scrollLeft += 3000;
-    }
-    carousel.scrollLeft -= carousel.offsetWidth;
-  };
+  arrowLeft.forEach((arrow, index) => {
+    arrow.addEventListener('click', (event) => {
+      if (carousel[index].scrollLeft === 0) {
+        carousel[index].scrollLeft += 3000;
+      }
+      carousel[index].scrollLeft -= carousel[index].offsetWidth;
+    });
+  });
 
-  arrowRight.onclick = () => {
-    if (carousel.scrollLeft >= (carousel.offsetWidth * 2)) {
-      carousel.scrollLeft = 0;
-    }
-    carousel.scrollLeft += carousel.offsetWidth;
-  };
+  arrowRight.forEach((arrow, index) => {
+    arrow.addEventListener('click', () => {
+      if (carousel[index].scrollLeft >= (carousel[index].offsetWidth * 2)) {
+        carousel[index].scrollLeft = 0;
+      }
+      carousel[index].scrollLeft += carousel[index].offsetWidth;
+    });
+  });
 }
 
 window.addEventListener('load', main);
