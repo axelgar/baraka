@@ -26,8 +26,15 @@ body {
 button, input {
   font-family: 'Poppins', sans-serif; }
 
+html {
+  background-color: #cccc; }
+
 body {
   background-color: #F9E6CE; }
+
+@media (min-width: 768px) {
+  body {
+    margin: 0px 200px; } }
 
 #site-header {
   background: url("/images/hero-bg.png") no-repeat 0 0;
