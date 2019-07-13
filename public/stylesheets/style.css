@@ -42,7 +42,8 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  color: #ad441e; }
   #site-header section {
     background-color: #FFFFFF;
     padding: 20px 20px 40px;
@@ -52,6 +53,22 @@ body {
     font-size: 0.875em; }
     #site-header section div:first-child {
       text-align: center; }
+    #site-header section h1, #site-header section h2 {
+      margin: 0;
+      padding: 0; }
+    #site-header section .banner-container {
+      display: flex;
+      justify-content: center; }
+      #site-header section .banner-container div {
+        align-self: center;
+        margin-left: 15px; }
+      #site-header section .banner-container h1 {
+        text-align: start;
+        font-size: 55px;
+        font-weight: 300;
+        line-height: 40px; }
+      #site-header section .banner-container h2 {
+        font-size: 16px; }
   #site-header article div {
     text-align: center; }
   #site-header article h1 {
@@ -74,7 +91,7 @@ body {
     #site-header section {
       max-width: 888px;
       padding: 40px; }
-      #site-header section div {
+      #site-header section > div {
         margin-bottom: 30px; }
       #site-header section article {
         text-align: left; }

@@ -19,6 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #ad441e;
 
   section {
     background-color: $color-white;
@@ -29,6 +30,32 @@ body {
     font-size: 0.875em;
     div:first-child {
       text-align: center;
+    }
+
+    h1, h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner-container {
+      display: flex;
+      justify-content: center;
+
+      div {
+        align-self: center;
+        margin-left: 15px;
+      }
+
+      h1 {
+        text-align: start;
+        font-size: 55px;
+        font-weight: 300;
+        line-height: 40px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
     }
   }
 
@@ -65,7 +92,7 @@ body {
       max-width: 888px;
       padding: 40px;
 
-      div {
+      > div {
         margin-bottom: 30px;
       }
 
