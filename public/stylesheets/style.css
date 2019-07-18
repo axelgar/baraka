@@ -231,6 +231,9 @@ footer {
   margin: 0;
   text-align: center; }
 
+.freeze {
+  pointer-events: none; }
+
 @media (min-width: 600px) {
   .container-header {
     display: grid;
