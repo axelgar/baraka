@@ -494,8 +494,8 @@ footer {
 
 .slider .container-carousel {
   display: grid;
-  width: 600%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 2000%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   height: 100%;
   position: absolute;
   top: 0;
@@ -534,5 +534,8 @@ footer {
   display: flex;
   justify-content: center;
   overflow: hidden; }
+
+.slider img {
+  object-fit: cover; }
 
 /*# sourceMappingURL=style.css.map */

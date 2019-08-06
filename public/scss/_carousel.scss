@@ -53,5 +53,9 @@
     justify-content: center;
     overflow: hidden;
   }
+
+  img {
+    object-fit: cover;
+  }
 }
 
