@@ -58,6 +58,16 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/sitemap.xml', function (req, res) {
+  try {
+    res.header('Content-Type', 'application/xml');
+    res.send('./sitemap.xml');
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
+});
+
 app.use('/', indexRouter);
 app.use('/private', privateRouter);
 
