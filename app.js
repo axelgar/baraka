@@ -60,7 +60,7 @@ app.use((req, res, next) => {
 
 app.get('/sitemap.xml', function (req, res) {
   try {
-    res.header('Content-Type', 'application/xml');
+    res.header('Content-Type', 'text/xml');
     res.send('./sitemap.xml');
   } catch (e) {
     console.error(e);
