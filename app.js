@@ -61,7 +61,7 @@ app.use((req, res, next) => {
 app.get('/sitemap.xml', function (req, res) {
   try {
     res.header('Content-Type', 'text/xml');
-    res.sendFile('sitemap.xml');
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
   } catch (e) {
     console.error(e);
     res.status(500).end();
